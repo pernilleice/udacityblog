@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans");
 
+/* Anything smaller than first breakpoint 600px */
 .container {
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "hd hd hd hd"
+    "nav nav nav nav"
+    "ct ct ct ct"
+    "ft ft ft ft";
   grid-gap: 10px;
   justify-content: center;
   background-color: #ccc;
@@ -15,23 +21,65 @@
   background: rgb(221, 157, 157);
   font-size: 0.5em;
   border: 1px blue;
-  border-radius: 25px;
+  border-radius: 5px;
+  grid-area: hd;
 }
 
 #navigation {
   background: rgb(152, 214, 243);
   font-size: 0.5em;
   border: 1px blue;
+  grid-area: nav;
 }
 
 #content {
   background: rgb(243, 219, 152);
   font-size: 0.5em;
   border: 1px orange;
+  grid-area: ct;
 }
 
 #footerdinho {
   background: rgb(167, 243, 152);
   font-size: 0.5em;
   border: 1px green;
+  grid-area: ft;
+}
+
+/* Medium Screens */
+@media (min-width: 600px) and (max-width: 900px) {
+  .container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "hd hd hd hd hd hd"
+      "ct ct ct ct nav nav"
+      "ct ct ct ct nav nav"
+      "ft ft ft ft ft ft";
+    grid-gap: 10px;
+    justify-content: center;
+    background-color: #ccc;
+    border: 1px red;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 901px) {
+  .container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "hd hd hd hd hd hd"
+      "ct ct ct ct nav nav"
+      "ct ct ct ct nav nav"
+      "ft ft ft ft ft ft";
+    grid-gap: 10px;
+    justify-content: center;
+    background-color: #ccc;
+    border: 1px red;
+  }
 }
